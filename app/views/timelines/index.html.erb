@@ -1,0 +1,59 @@
+
+<br />Kevin - 8 MSP 8 Leo 8 Andy
+<% ckwong_ticket = false %>
+<% tyip_ticket = false %>
+<% wlo_ticket = false %>
+<% ckwong_hours = 0 %>
+<% tyip_hours = 0 %>
+<% wlo_hours = 0 %>
+
+<table>
+<% @timesheet_items.each{|timesheet_item| %>
+    <% if timesheet_item.hours.to_i > 0 %>
+        <tr>
+        <td><%= timesheet_item.hours %></td>
+        <td><%= timesheet_item.client_name %></td>
+        <td><%= timesheet_item.project_name %></td>
+        <td><%= timesheet_item.parent_name %></td>
+        <td><%= timesheet_item.task_name %></td>
+        <td><%= timesheet_item.employee_name %></td>
+        </tr>
+        
+        <% if timesheet_item.project_name == 'MSP2' %>
+          <% if timesheet_item.employee_name == 'tyip' %>
+            <% tyip_ticket = true %>
+            <% tyip_hours += timesheet_item.total_hours.to_i %>
+          <% end %>
+          <% if timesheet_item.employee_name == 'wlo@wasoftware.com' %>
+            <% wlo_ticket = true %>
+            <% wlo_hours += timesheet_item.total_hours.to_i %>
+          <% end %>
+          <% if timesheet_item.employee_name == 'ckwong@wasoftware.com' %>
+            <% ckwong_ticket = true %>
+            <% ckwong_hours += timesheet_item.total_hours.to_i %>
+          <% end %>
+        <% end %>
+    <% end %>
+<% } %>
+</table>
+<hr />
+<table>
+<tr>
+<td>MSP2 day<%= @day %>Hour</td><td>ckwong: <%= ckwong_ticket %></td>
+</tr>
+<tr>
+<td>MSP2 day<%= @day %>Hour</td><td>tyip: <%= tyip_ticket %></td>
+</tr>
+<tr>
+<td>MSP2 day<%= @day %>Hour</td><td>wlo: <%= wlo_ticket %></td>
+</tr>
+<tr><td>total hours:</td><td>ckwong: <%= ckwong_hours %></td></tr>
+<tr><td>total hours:</td><td>tyip: <%= tyip_hours %></td></tr>
+<tr><td>total hours:</td><td>wlo: <%= wlo_hours %></td></tr>
+</table>
+<hr />
+<%= sprintf("%.1f", @totalCost) %>
+<%= render :partial => 'timeline', :collection => @top_level_timelines, :locals => {:should_be_in_progress => true} %>
+<%= link_to 'new timeline', new_timeline_path %> |
+<%= link_to 'Back to Priorities', priorities_path %> |
+<%= link_to 'Back to Progress', priorities_path(:view_by => 'view progress') %>

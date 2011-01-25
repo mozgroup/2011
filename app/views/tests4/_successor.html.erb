@@ -1,0 +1,7 @@
+My parent is preferred : <%= is_preferred %>.
+
+<% is_preferred_successor = (successor.id < 30) %>
+
+<%= render :partial => 'tests4/timeline', :object => successor, :locals => {:is_preferred => is_preferred_successor} %>
+
+

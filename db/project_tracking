@@ -1,0 +1,65 @@
+CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);
+
+CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
+
+CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime);
+
+CREATE TABLE [timelines] ([id] INT(11) NOT NULL autoincrement, [timesheet_task_id] INT(11) DEFAULT 'NULL', [owner_id] INT(11) DEFAULT 'NULL', [predecessor_id] INT(11) DEFAULT 'NULL', [name] VARCHAR(255) NOT NULL, [start_date] DATE NOT NULL, [duration] INT(11) NOT NULL DEFAULT 1, [delay] INT(11) NOT NULL DEFAULT 0, [is_resolved] BOOLEAN NOT NULL DEFAULT 0, [is_in_progress] BOOLEAN NOT NULL DEFAULT 0, [cost] NUMERIC(12,5) NOT NULL DEFAULT '8.0', PRIMARY KEY ([id]));
+
+INSERT INTO schema_migrations (version) VALUES ('20100927151547');
+
+
+
+INSERT INTO users (id, name, email, created_at, updated_at) VALUES (1, 'a', 'd', '2010-09-27 15:21:53.739517', '2010-09-27 15:21:53.739517');
+
+
+
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (3, '', 7, '', 'QAG-180777 #242 Platform Audit Checklist', '2011-01-11', 1, 0, '1', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (4, '', 7, 3, 'Include NIST Security Controls in Platform Audit Checklist', '2011-01-12', 1, 1, '1', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (5, '', 7, 1, 'Platform Installation Instruction Inspection', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (6, '', 3, 5, 'new GoDaddy linux machine Installation and Configuration Java, Ruby, PHP, Joomla, mysql, postgres (TVR-172421, #235)', '2011-01-15', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (7, '', 8, 6, 'new Platform Inspection', '2011-01-16', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (8, '', 2, '', 'MSP2 ESAPI baseline', '2011-01-10', 1, 0, '1', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (9, '', 8, 8, 'MSP2 ESAPI build', '2011-01-11', 1, 2, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (10, '', 7, 9, 'MSP2 ESAPI deploy (QCR-682780, #243)', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (11, '', 5, 10, 'MSP2 ESAPI QA', '2011-01-15', 2, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (12, '', 2, '', 'APR2 ESAPI integration', '2011-01-13', 1, 0, '1', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (13, '', 8, 12, 'APR2 ESAPI build', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (14, '', 3, 13, 'APR2 ESAPI deploy', '2011-01-15', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (15, '', 3, 14, 'APR2 ESAPI QA', '2011-01-16', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (16, '', 8, 45, 'Joomla ESAPI build', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (17, '', 3, 16, 'Joomla ESAPI deploy', '2011-01-15', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (18, '', 3, 17, 'Joomla ESAPI QA', '2011-01-16', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (19, '', 8, 46, 'Spell Checker ESAPI build', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (20, '', 3, 19, 'Spell Checker ESAPI deploy', '2011-01-15', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (21, '', 3, 20, 'Spell Checker ESAPI QA', '2011-01-16', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (22, '', 8, 47, 'Mass Email ESAPI build', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (23, '', 3, 22, 'Mass Email ESAPI deploy', '2011-01-15', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (24, '', 3, 23, 'Mass Email ESAPI QA', '2011-01-16', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (25, '', 8, '', 'NDC-135332 #248 AppScan fix for MSP', '2011-01-13', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (26, '', 8, '', 'UKW-315448 #250 Failed to display the second page of NC project in the public', '2011-01-13', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (27, '', 8, 26, 'UKW-315448 #250 Build', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (28, '', 7, 27, 'UKW-315448 #250 Deploy', '2011-01-15', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (29, '', 3, 28, 'UKW-315448 #250 QA', '2011-01-16', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (30, '', 8, 25, 'NDC-135332 #248 Build', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (31, '', 7, 30, 'NDC-135332 #248 Deploy', '2011-01-15', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (32, '', 3, 31, 'NDC-135332 #248 QA', '2011-01-16', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (33, '', 5, 8, 'MSP2 ESAPI Test Plan', '2011-01-11', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (34, '', 3, 12, 'APR2 ESAPI Test Plan', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (35, '', 5, 47, 'Mass Email ESAPI Test Plan', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (36, '', 5, 46, 'Spell Checker ESAPI Test Plan', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (37, '', 5, 45, 'Joomla ESAPI Test Plan', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (38, '', 5, 25, 'NDC-135332 #248 Test Plan', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (39, '', 5, 26, 'UKW-315448 #250 Test Plan', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (40, '', 4, '', 'DB Audit Checklist', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (41, '', 2, '', 'Corporate Inventory Audit Checklist', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (42, '', 2, '', 'Corporate Inventory Catalog', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (43, '', 2, '', 'Design Audit Checklist', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (44, '', 2, '', 'Source Code Audit Checklist', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (45, '', 2, '', 'Joomla ESAPI', '2011-01-14', 0, 0, '1', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (46, '', 2, '', 'Spell Checker ESAPI ', '2011-01-14', 0, 0, '1', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (2, '', 8, 1, 'Platform Installation Test Plan', '2011-01-14', 1, 0, '0', '0', 8);
+INSERT INTO timelines (id, timesheet_task_id, owner_id, predecessor_id, name, start_date, duration, delay, is_resolved, is_in_progress, cost) VALUES (1, '', 3, '', 'TVR-172421 Platform Installation Instruction', '2011-01-11', 1, 2, '0', '1', 8);
+
+
+

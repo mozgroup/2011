@@ -1,0 +1,56 @@
+
+
+    <% aggregate_start_date ||= priority.start_date %>
+    <% aggregate_end_date ||= priority.aggregate_end_date %>
+    <% colspan = priority.end_date.day - priority.start_date.day + 1%>    
+    <% count_conflicts = priority.count_conflicts %>
+    
+    <% if (@view_by.blank?) || (@view_by == 'view conflicts') %>
+      <% bgcolor = '#72B672' %>
+      <% if (count_conflicts > 1) && (!priority.is_resolved) %>
+        <% priority_bgcolor = '#C38E8E' %>
+      <% else %>
+        <% priority_bgcolor = bgcolor %>
+      <% end %>
+    <% else %> <!-- view progress -->
+      <% bgcolor = '#ADADAD' %>
+      <% if (priority.is_resolved) %>
+        <% priority_bgcolor = '#295151' %>
+      <% elsif (priority.is_in_progress) %>
+        <% priority_bgcolor = '#72B672' %>
+      <% elsif should_be_in_progress %>
+        <% priority_bgcolor = '#C38E8E' %>
+      <% else %>
+        <% priority_bgcolor = '' %>
+      <% end %>
+    <% end %>
+    
+    <% if is_top %>
+    <tr>
+      <td colspan=<%= aggregate_start_date - @a %>>&nbsp;</td>
+      <td colspan=<%= @b - aggregate_start_date + 1 %>><%= priority.name %></td>
+    </tr>
+    <% top_level_id = priority.id %>
+    <% end %>
+    
+    <% if (@owner.blank?) || (@owner == priority.owner) %>
+    <tr>
+    <% (@a .. (aggregate_start_date - 1)).each{|date| %>
+      <td></td>
+    <% } %>
+    <% (aggregate_start_date .. (priority.start_date - 1)).each{|date| %>
+      <td bgcolor=<%= bgcolor %>></td>
+    <% } %>
+    <td colspan='<%= colspan %>' bgcolor='<%= priority_bgcolor %>' title='<%= priority.name %>'>
+      <%= link_to "#{priority.owner}:#{count_conflicts}", timelines_path(:top_level_id => top_level_id) %>
+    </td>
+    <% ((priority.end_date + 1) .. aggregate_end_date).each{|date| %>
+      <td bgcolor=<%= bgcolor %>></td>
+    <% } %>
+    <% ((aggregate_end_date + 1) .. @b).each{|date| %>
+      <td></td>
+    <% } %>
+    </tr>
+    <% end %>
+    
+    <%= render :partial => 'priority_successor', :collection => priority.successors, :locals => { :should_be_in_progress => priority.is_resolved, :top_level_id => top_level_id, :aggregate_start_date => aggregate_start_date, :aggregate_end_date => aggregate_end_date } %>

@@ -1,0 +1,11 @@
+My parent is preferred : <%= @is_preferred %>.
+
+<% @successors.each{|timeline| %>
+
+  <% @is_preferred = (timeline.id < 30) %>
+
+  <%= render :partial => 'tests2/timeline' %>
+
+<% } %>
+
+

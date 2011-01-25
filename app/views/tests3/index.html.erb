@@ -1,0 +1,9 @@
+<% is_preferred = (@timeline.id < 10) %>
+
+<% @successors = @timeline.successors %>
+
+<%= render :partial => 'tests3/successors', :locals => { :is_preferred => is_preferred } %>
+
+<%= render :partial => 'tests3/timeline', :object => @timeline, :locals => { :is_preferred => is_preferred } %>
+
+Is Preferred <%= is_preferred %>

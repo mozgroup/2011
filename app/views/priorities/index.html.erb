@@ -1,0 +1,27 @@
+
+<%= form_tag(priorities_path, :method => 'get') do |f| %>
+  <%= select_tag(:owner, options_for_select(["", "aau",
+            "aleung",
+            "ckwong",
+            "dlam",
+            "kchung",
+            "mchung",
+            "tyip",
+            "wlo"], @owner), :onchange => "this.form.submit()") %>
+
+  <%= select_tag(:view_by, options_for_select(["view conflicts",
+            "view progress"], @view_by), :onchange => "this.form.submit()") %>
+<% end %>
+
+<table border=1>
+<tr>
+  <% (@a .. @b).each{|date| %>
+    <th><%= date %></th>
+  <% } %>
+</tr>
+
+<%= render :partial => 'priority', :collection => @top_level_timelines, :locals => { :should_be_in_progress => true, :is_top => true } %>
+</table>
+
+<%= link_to 'Back to Timelines', timelines_path %> |
+<%= link_to 'Back to Priorities', priorities_path %>

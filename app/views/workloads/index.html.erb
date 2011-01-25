@@ -1,0 +1,33 @@
+
+
+<table border=1>
+<tr>
+  <th></th>
+  <th></th>
+  <% (@a .. @b).each{|date| %>
+    <th><%= date %></th>
+  <% } %>
+</tr>
+<tr>
+<% date = Date.parse "2012-01-01" %>
+<% @workloads.each{|workload| %>
+  <% if date > workload.work_date %>
+    </tr>
+    <tr>
+      <td><%= workload.owner %></td>
+      <td><%= (@group_by_owner.detect{|group_by| group_by[0] == workload.owner})[1] %></td>
+  <% end %>
+      <td><%= link_to workload.duration, priorities_path %></td>
+  <% date = workload.work_date %>
+<% } %>
+</tr>
+<tr>
+  <td>subtotal</td>
+  <td><%= @total_duration %></td>
+<% @group_by_work_date.each{|group_by| %>
+  <td><%= group_by[1] %></td>
+<% } %>
+</tr>
+</table>
+
+<%= @count_working_days %>

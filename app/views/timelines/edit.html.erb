@@ -1,0 +1,7 @@
+<h1>Editing timeline</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @timeline %> |
+<%= link_to 'Back to Timelines', timelines_path %> |
+<%= link_to 'Back to Priorities', priorities_path(:owner => @timeline.owner) %>

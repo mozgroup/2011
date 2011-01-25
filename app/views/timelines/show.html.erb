@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @timeline.name %>
+</p>
+
+<p>
+  <b>timesheet_task_id:</b>
+  <%= @timeline.timesheet_task_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_timeline_path(@timeline) %> |
+<%= link_to 'Back to Timelines', timelines_path %> |
+<%= link_to 'Back to Priorities', priorities_path %> |
+<%= link_to 'Back to Progress', priorities_path(:view_by => 'view progress') %>

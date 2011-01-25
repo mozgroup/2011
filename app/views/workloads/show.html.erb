@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @owner %>
+</p>
+
+<% @timelines.each{|timeline| %>
+<p>
+  <b>name:</b>
+  <%= timeline.name %>
+</p>
+<% } %>
+
+<%= link_to 'Back to Timelines', timelines_path %> |
+<%= link_to 'Back to Priorities', priorities_path %>

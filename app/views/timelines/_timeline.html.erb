@@ -1,0 +1,37 @@
+<table border=1>
+<tr>
+  <th>id</th>
+  <th>name</th>
+  <th>owner</th>
+  <th>start date</th>
+  <th>duration</th>
+  <th>delay</th>
+  <th>end date</th>
+  <th>cost</th>
+  <th>status</th>
+</tr>
+<% if timeline.is_resolved %>
+    <tr bgcolor='#295151'>
+    <% status = 'resolved' %>
+<% elsif timeline.is_in_progress %>
+    <tr bgcolor='#72B672'>
+    <% status = 'in progress' %>
+<% elsif should_be_in_progress %>
+    <tr bgcolor='#C38E8E'>
+    <% status = 'open' %>
+<% else %>
+    <tr>
+    <% status = '' %>
+<% end %>
+    <td><%= link_to timeline.id, edit_timeline_path(timeline) %></td>
+    <td width='220px'><%= timeline.name %></td>
+    <td><%= timeline.owner %></td>
+    <td><%= timeline.start_date %></td>
+    <td><%= timeline.duration %></td>
+    <td><%= timeline.delay %></td>
+    <td><%= timeline.end_date %></td>
+    <td><%= timeline.printCost("%.1f") %></td>
+    <td><%= status %></td>
+    </tr>
+    <%= render :partial => 'timeline_successor', :collection => timeline.successors, :locals => {:should_be_in_progress => timeline.is_resolved} %>
+</table>
