@@ -1,0 +1,296 @@
+
+
+Started GET "/priorities" for 127.0.0.1 at Wed Jan 26 09:42:02 -0500 2011
+  Processing by PrioritiesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mTimeline Load (3.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines"."predecessor_id" IS NULL)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 1)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 2)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 5)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 6)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 7)[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-09') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mWorkload Load (2.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-10') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mWorkload Load (2.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-11') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-12') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 3) AND ("workloads"."work_date" = '2011-01-17') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-18') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-19') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-20') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-21') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-22') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-23') AND ("workloads"."owner" = 'wlo') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (55.0ms)
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-22') AND ("workloads"."owner" = 'tyip') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-23') AND ("workloads"."owner" = 'tyip') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-24') AND ("workloads"."owner" = 'aau') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-25') AND ("workloads"."owner" = 'aau') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-26') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+  [1m[35mWorkload Load (2.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-27') AND ("workloads"."owner" = 'wlo') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (58.0ms)
+Rendered priorities/_priority_successor.html.erb (84.0ms)
+Rendered priorities/_priority.html.erb (140.0ms)
+Rendered priorities/_priority_successor.html.erb (166.0ms)
+Rendered priorities/_priority.html.erb (223.0ms)
+Rendered priorities/_priority_successor.html.erb (330.0ms)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 3)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 4)
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-11') AND ("workloads"."owner" = 'aleung') LIMIT 1[0m
+  [1m[35mWorkload Load (2.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 2) AND ("workloads"."work_date" = '2011-01-12') AND ("workloads"."owner" = 'aleung') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'tyip') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'tyip') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'tyip') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (61.0ms)
+Rendered priorities/_priority_successor.html.erb (87.0ms)
+  [1m[35mTimeline Load (3.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 8)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 9)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 10)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 11)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 33)
+  [1m[36mTimeline Load (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 49)[0m
+  [1m[35mTimeline Load (0.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 50)
+  [1m[36mTimeline Load (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 51)[0m
+  [1m[35mTimeline Load (0.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 52)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 54)[0m
+  [1m[35mTimeline Load (0.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 55)
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-10') AND ("workloads"."owner" = 'aleung') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-11') AND ("workloads"."owner" = 'aleung') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-12') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 9) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 9) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mWorkload Load (2.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 3) AND ("workloads"."work_date" = '2011-01-17') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-18') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+  [1m[35mWorkload Load (2.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 2) AND ("workloads"."work_date" = '2011-01-19') AND ("workloads"."owner" = 'kchung') LIMIT 1
+  [1m[36mWorkload Load (2.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 7) AND ("workloads"."work_date" = '2011-01-20') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (166.0ms)
+Rendered priorities/_priority_successor.html.erb (194.0ms)
+Rendered priorities/_priority.html.erb (250.0ms)
+Rendered priorities/_priority_successor.html.erb (276.0ms)
+Rendered priorities/_priority.html.erb (345.0ms)
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-12') AND ("workloads"."owner" = 'kchung') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (55.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-12') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (1.0ms)
+Rendered priorities/_priority.html.erb (52.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-12') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (52.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-12') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (53.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-12') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (54.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-12') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (53.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-12') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (53.0ms)
+Rendered priorities/_priority_successor.html.erb (917.1ms)
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 12)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 13)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 14)
+  [1m[36mTimeline Load (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 15)[0m
+  [1m[35mTimeline Load (0.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 34)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 53)[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'aleung') LIMIT 1
+  [1m[36mWorkload Load (2.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'aleung') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mWorkload Load (2.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 7) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-17') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-18') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-19') AND ("workloads"."owner" = 'kchung') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 7) AND ("workloads"."work_date" = '2011-01-20') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (1.0ms)
+Rendered priorities/_priority.html.erb (57.0ms)
+Rendered priorities/_priority_successor.html.erb (86.0ms)
+Rendered priorities/_priority.html.erb (138.0ms)
+Rendered priorities/_priority_successor.html.erb (165.0ms)
+Rendered priorities/_priority.html.erb (221.0ms)
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'kchung') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 6) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (54.0ms)
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'aau') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'aau') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (56.0ms)
+Rendered priorities/_priority_successor.html.erb (409.0ms)
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 25)
+  [1m[36mTimeline Load (2.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 30)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 31)
+  [1m[36mTimeline Load (2.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 32)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 38)
+  [1m[36mWorkload Load (2.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 9) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 7) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-17') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-18') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-19') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 7) AND ("workloads"."work_date" = '2011-01-20') AND ("workloads"."owner" = 'kchung') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (1.0ms)
+Rendered priorities/_priority.html.erb (55.0ms)
+Rendered priorities/_priority_successor.html.erb (81.0ms)
+Rendered priorities/_priority.html.erb (134.0ms)
+Rendered priorities/_priority_successor.html.erb (159.0ms)
+Rendered priorities/_priority.html.erb (212.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 6) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'kchung') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (51.0ms)
+Rendered priorities/_priority_successor.html.erb (315.0ms)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 26)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 27)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 28)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 29)
+  [1m[36mTimeline Load (2.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 39)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-12') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-13') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 3) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 3) AND ("workloads"."work_date" = '2011-01-17') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-18') AND ("workloads"."owner" = 'kchung') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 2) AND ("workloads"."work_date" = '2011-01-19') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (52.0ms)
+Rendered priorities/_priority_successor.html.erb (80.0ms)
+Rendered priorities/_priority.html.erb (134.0ms)
+Rendered priorities/_priority_successor.html.erb (159.0ms)
+Rendered priorities/_priority.html.erb (215.0ms)
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'kchung') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (58.0ms)
+Rendered priorities/_priority_successor.html.erb (324.0ms)
+  [1m[35mTimeline Load (2.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 40)
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'dlam') LIMIT 1[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 1) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'dlam') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+  [1m[36mTimeline Load (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 41)[0m
+  [1m[35mWorkload Load (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'aleung') LIMIT 1
+  [1m[36mWorkload Load (1.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'aleung') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 42)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'aleung') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'aleung') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 43)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'aleung') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'aleung') LIMIT 1[0m
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+  [1m[35mTimeline Load (0.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 44)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'aleung') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'aleung') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+  [1m[36mTimeline Load (2.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 45)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 16)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 17)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 18)
+  [1m[36mTimeline Load (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 37)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'aleung') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 7) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-17') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-18') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-19') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+  [1m[35mCACHE (1.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 7) AND ("workloads"."work_date" = '2011-01-20') AND ("workloads"."owner" = 'kchung') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (55.0ms)
+Rendered priorities/_priority_successor.html.erb (80.0ms)
+Rendered priorities/_priority.html.erb (132.0ms)
+Rendered priorities/_priority_successor.html.erb (158.0ms)
+Rendered priorities/_priority.html.erb (214.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 6) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'kchung') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (51.0ms)
+Rendered priorities/_priority_successor.html.erb (433.0ms)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 46)[0m
+  [1m[35mTimeline Load (2.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 19)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 20)[0m
+  [1m[35mTimeline Load (2.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 21)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 36)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'aleung') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 7) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-17') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-18') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-19') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 7) AND ("workloads"."work_date" = '2011-01-20') AND ("workloads"."owner" = 'kchung') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (54.0ms)
+Rendered priorities/_priority_successor.html.erb (80.0ms)
+Rendered priorities/_priority.html.erb (135.0ms)
+Rendered priorities/_priority_successor.html.erb (161.0ms)
+Rendered priorities/_priority.html.erb (212.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 6) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'kchung') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (53.0ms)
+Rendered priorities/_priority_successor.html.erb (319.0ms)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 47)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 22)
+  [1m[36mTimeline Load (1.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 23)[0m
+  [1m[35mTimeline Load (1.0ms)[0m  SELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 24)
+  [1m[36mTimeline Load (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE ("timelines".predecessor_id = 35)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-14') AND ("workloads"."owner" = 'aleung') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'wlo') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 7) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'wlo') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-17') AND ("workloads"."owner" = 'ckwong') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 8) AND ("workloads"."work_date" = '2011-01-18') AND ("workloads"."owner" = 'ckwong') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-19') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 7) AND ("workloads"."work_date" = '2011-01-20') AND ("workloads"."owner" = 'kchung') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (54.0ms)
+Rendered priorities/_priority_successor.html.erb (80.0ms)
+Rendered priorities/_priority.html.erb (133.0ms)
+Rendered priorities/_priority_successor.html.erb (158.0ms)
+Rendered priorities/_priority.html.erb (212.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "workloads".* FROM "workloads" WHERE (duration > 0) AND ("workloads"."work_date" = '2011-01-15') AND ("workloads"."owner" = 'kchung') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "workloads".* FROM "workloads" WHERE (duration > 6) AND ("workloads"."work_date" = '2011-01-16') AND ("workloads"."owner" = 'kchung') LIMIT 1
+Rendered priorities/_priority_successor.html.erb (0.0ms)
+Rendered priorities/_priority.html.erb (53.0ms)
+Rendered priorities/_priority_successor.html.erb (316.0ms)
+Rendered priorities/_priority.html.erb (4686.3ms)
+Rendered priorities/index.html.erb within layouts/application (4795.3ms)
+Completed 200 OK in 5785ms (Views: 4799.3ms | ActiveRecord: 124.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("timelines")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("workloads")

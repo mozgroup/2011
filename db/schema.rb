@@ -12,11 +12,30 @@
 
 ActiveRecord::Schema.define(:version => 20100927151547) do
 
+  create_table "timelines", :force => true do |t|
+    t.integer "timesheet_task_id",                                :default => 0
+    t.integer "owner_id",                                         :default => 0
+    t.integer "predecessor_id",                                   :default => 0
+    t.string  "name",                                                                :null => false
+    t.date    "start_date",                                                          :null => false
+    t.integer "duration",                                         :default => 1,     :null => false
+    t.integer "delay",                                            :default => 0,     :null => false
+    t.boolean "is_resolved",                                      :default => false, :null => false
+    t.boolean "is_in_progress",                                   :default => false, :null => false
+    t.decimal "cost",              :precision => 12, :scale => 5, :default => 8.0,   :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "workloads", :force => true do |t|
+    t.string  "owner",     :limit => nil
+    t.date    "work_date",                :null => false
+    t.integer "duration"
   end
 
 end
