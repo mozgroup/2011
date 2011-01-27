@@ -1,6 +1,7 @@
 class AddDetailsToTimelines < ActiveRecord::Migration
   def self.up
     add_column :timelines, :owner_id, :integer
+    add_column :timelines, :predecessor_id, :integer
     add_column :timelines, :name, :string
     add_column :timelines, :start_date, :date
     add_column :timelines, :duration, :integer
@@ -18,6 +19,7 @@ class AddDetailsToTimelines < ActiveRecord::Migration
     remove_column :timelines, :duration
     remove_column :timelines, :start_date
     remove_column :timelines, :name
+    remove_column :timelines, :predecessor_id, :integer
     remove_column :timelines, :owner_id
   end
 end
