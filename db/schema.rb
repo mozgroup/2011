@@ -10,19 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100927151547) do
+ActiveRecord::Schema.define(:version => 20110126181802) do
 
   create_table "timelines", :force => true do |t|
-    t.integer "timesheet_task_id",                                :default => 0
-    t.integer "owner_id",                                         :default => 0
-    t.integer "predecessor_id",                                   :default => 0
-    t.string  "name",                                                                :null => false
-    t.date    "start_date",                                                          :null => false
-    t.integer "duration",                                         :default => 1,     :null => false
-    t.integer "delay",                                            :default => 0,     :null => false
-    t.boolean "is_resolved",                                      :default => false, :null => false
-    t.boolean "is_in_progress",                                   :default => false, :null => false
-    t.decimal "cost",              :precision => 12, :scale => 5, :default => 8.0,   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "owner_id"
+    t.integer  "timesheet_task_id"
+    t.integer  "predecessor_id"
+    t.string   "name"
+    t.date     "start_date"
+    t.integer  "duration"
+    t.integer  "delay"
+    t.boolean  "is_resolved"
+    t.boolean  "is_in_progress"
+    t.decimal  "cost"
   end
 
   create_table "users", :force => true do |t|
@@ -33,9 +35,11 @@ ActiveRecord::Schema.define(:version => 20100927151547) do
   end
 
   create_table "workloads", :force => true do |t|
-    t.string  "owner",     :limit => nil
-    t.date    "work_date",                :null => false
-    t.integer "duration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "owner"
+    t.date     "work_date"
+    t.integer  "duration"
   end
 
 end
