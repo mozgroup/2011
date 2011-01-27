@@ -10,7 +10,7 @@ group :development, :test do
 end
 
 group :production, :staging do
-  gem 'pg'
+  gem 'pg', '0.9.0'
 end
 
 # Use unicorn as the web server

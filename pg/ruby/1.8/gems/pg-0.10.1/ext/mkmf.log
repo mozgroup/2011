@@ -1,0 +1,14 @@
+find_executable: checking for pg_config... -------------------- yes
+
+--------------------
+
+find_header: checking for libpq-fe.h... -------------------- no
+
+"gcc -E -I. -Ic:/ruby187/lib/ruby/1.8/i386-mingw32 -I. -Ic:\Program    -IC:/PROGRA~1/POSTGR~1/8.3/include -g -O2 -DFD_SETSIZE=256     conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <libpq-fe.h>
+/* end */
+
+--------------------
+
